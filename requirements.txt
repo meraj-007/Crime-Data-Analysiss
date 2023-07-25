@@ -1,0 +1,8 @@
+certifi==2022.5.18.1
+geographiclib==1.52
+geopy==2.2.0
+pandas==1.4.2
+flask
+joblib
+scikit-learn
+gunicorn
