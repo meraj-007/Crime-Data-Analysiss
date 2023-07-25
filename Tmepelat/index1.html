@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Flask Leaflet Website</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/universal.css') }}" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  crossorigin=""></script>
+</head>
+
+<body>
+
+  <header>
+		<div class="container text-center">
+			<div class="fh5co-navbar-brand">
+				<a class="fh5co-logo" href="index.html">P A A S B A A N</a>
+			</div>
+			<nav id="fh5co-main-nav" role="navigation">
+				<ul>
+					<li><a href="index.html">Predict Crime</a></li>
+					<li><a href="work.html">Crime Analysis</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="index1.html" class="active">Index1</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+  <div id="map"></div>
+  <script src="{{ url_for('static', filename='js/universal.js') }}" /></script>
+  <script>
+
+    {% for marker in markers %}
+      L.marker([{{ marker['lat'] }}, {{ marker['lon'] }}]).addTo(map)
+      .bindPopup("{{ marker['popup'] }}")
+      .openPopup();
+    {% endfor %}
+
+  </script>
+</body>
+
+</html>

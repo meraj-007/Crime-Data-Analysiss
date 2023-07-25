@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <title>Home Page
+    </title>
+    <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
+
+    <style>
+
+body {
+  background: linear-gradient(135deg, #FF9933,#138808);
+  }
+  
+  .name {
+    color: rgb(27, 26, 26);
+    font-size: medium;
+    font-weight: bold;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  .work {
+    color: rgb(27, 26, 26);
+    font-weight: bold;
+    font-style: italic;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+  }
+  
+  .title {
+      color: rgba(141, 223, 99, 0.926);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      text-align: center;
+  }
+  
+  .box {
+    -webkit-box-shadow: 15px 15px 10px -5px rgba(141, 223, 99, 0.926);
+    -moz-box-shadow: 15px 15px 10px -5px rgba(141, 223, 99, 0.926);
+    box-shadow: 25px 25px 20px -20px white);
+    /* background: linear-gradient(-135deg, #FF9933,#138808); */
+    /* background: linear-gradient(135deg, #dd740a,#1c4918); */
+  /* background: linear-gradient(135deg, #df9851,#41af36); */
+    background: #ffffffc9;
+    
+  }
+  
+  .col-md-3 {
+    margin-top: 21px;
+    margin-left: 75px;
+  }
+
+  .logo {
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    width: 15%;
+  }
+
+  .outer {
+    background: linear-gradient(135deg, #FF9933,#138808);
+    
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+   .glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    color: linear-gradient(-135deg, #FF9933,#138808);
+    background: linear-gradient(-135deg, #FF9933,#138808);
+    /* background: #fff; */
+
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    /* background: linear-gradient(135deg, #FF9933,#138808); */
+    /* background: #fff; */
+    background: linear-gradient(-135deg, #FF9933,#138808);
+
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-135deg, #FF9933,#138808);
+    /* background: #fff; */
+
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+/*
+.box {
+  background: #fff;
+  padding: 16px 24px;
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .01);
+  justify-content: center;
+}
+.box::after {
+  position: absolute;
+  content: "";
+  top: 15px;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  transform: scale(0.9) translateZ(0);
+  filter: blur(15px);
+  background: linear-gradient(to left, #ff5770, #e4428d, #c42da8, #9e16c3, #6501de, #9e16c3, #c42da8, #e4428d, #ff5770);
+  background-size: 200% 200%;
+  animation: animateGlow 1.25s linear infinite;
+}
+@keyframes animateGlow {
+  0% {
+    background-position: 0% 50%;
+ }
+  100% {
+    background-position: 200% 50%;
+ }
+} */
+
+
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(-135deg, #FF9933,#138808);
+}
+
+
+
+.container
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 40px;
+  /* margin-left: 0px; */
+}
+
+.container .box
+{
+  position: relative;
+  width: 320px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 30px;
+  transition: 0.5s;
+}
+
+.container .box::before
+{
+  content:' ';
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: 50%;
+  height: 100%;
+  text-decoration: none;
+  background: linear-gradient(135deg, #FF9933,#138808);
+  
+  border-radius: 8px;
+  transform: skewX(15deg);
+  transition: 0.5s;
+}
+
+.container .box::after
+{
+  content:'';
+  position: absolute;
+  top: 0;
+  left: 50;
+  width: 50%;
+  height: 100%;
+  /* background: linear-gradient(135deg, #FF9933,#138808); */
+  background: #fff;
+
+  border-radius: 8px;
+  transform: skewX(15deg);
+  transition: 1s;
+  filter: blur(30px);
+}
+
+.container .box:hover:before,
+.container .box:hover:after
+{
+  transform: skewX(0deg);
+  left: 20px;
+  width: calc(100% - 90px);
+  
+}
+
+.container .box:nth-child(1):before,
+.container .box:nth-child(1):after
+{
+  /* background: linear-gradient(-135deg, #FF9933,#138808); */
+  /* background: #fff; */
+  background: linear-gradient(135deg, #df9851,#41af36);
+
+
+}
+
+.container .box:nth-child(2):before,
+.container .box:nth-child(2):after
+{
+  background: linear-gradient(-135deg, #FF9933,#138808);
+}
+
+.container .box:nth-child(3):before,
+.container .box:nth-child(3):after
+{
+  background: linear-gradient(135deg, #FF9933,#138808);
+}
+
+.container .box span
+{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.container .box span::before
+{
+  content:'';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #FF9933,#138808);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.1s;  
+  animation: animate 2s ease-in-out infinite;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08)
+}
+
+.container .box:hover span::before
+{
+  top: -50px;
+  left: 50px;
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+}
+
+.container .box span::after
+{
+  content:'';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: linear-gradient(-135deg, #FF9933,#138808);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.5s;
+  animation: animate 2s ease-in-out infinite;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  animation-delay: -1s;
+}
+
+.container .box:hover span:after
+{
+  bottom: -50px;
+  right: 50px;
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+}
+
+@keyframes animate
+{
+  0%, 100%
+  {
+    transform: translateY(10px);
+  }
+  
+  50%
+  {
+    transform: translate(-10px);
+  }
+}
+
+.container .box .content
+{
+  position: relative;
+  left: 0;
+  padding: 20px 40px;
+  /* background: linear-gradient(135deg, #FF9933,#138808); */
+  background: linear-gradient(135deg, #df9851,#41af36);
+
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1;
+  transform: 0.5s;
+  color: #fff;
+}
+
+.container .box:hover .content
+{
+  left: -25px;
+  padding: 60px 40px;
+}
+
+.container .box .content h2
+{
+  font-size: 2em;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.container .box .content p
+{
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  line-height: 1.4em;
+}
+
+/* .container .box .content a
+{
+  display: inline-block;
+  font-size: 1.1em;
+  color: #111;
+  background: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 5px;
+} */
+
+/* .container .box .content a:hover
+{
+  background: #ffcf4d;
+  border: 1px solid rgba(255, 0, 88, 0.4);
+  box-shadow: 0 1px 15px rgba(1, 1, 1, 0.2);
+} */
+
+
+.neonText {
+  animation: flicker 2.5s infinite alternate;
+  color: #fff;
+}
+@keyframes flicker {
+    
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+      text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #0fa,
+      0 0 80px #0fa,
+      0 0 90px #0fa,
+      0 0 100px #0fa,
+      0 0 150px #0fa;
+  
+  }
+  
+  20%, 24%, 55% {        
+      text-shadow: none;
+  }    
+}
+
+.titleBar {
+  /* margin-top: 1% !important; */
+  width: 100% !important;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin-top: px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  
+}
+
+
+
+
+/* .ourNav{
+  
+} */
+.ourNav ul {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+
+  margin: 2% auto;
+  padding: 10px 20px;
+  border-radius: 8px;
+  width: 70%;
+}
+.ourNav ul li {
+  list-style: none;
+  display: inline-block;
+margin-left: 50px;
+}
+.ourNav ul li a {
+  font-family: arial;
+  color: #8BE3F3;
+  text-decoration: none;
+  position: relative;
+  padding: 15px 10px;
+  font-size: 18px;
+  /* display: block; */
+}
+.ourNav ul li a + a {
+  margin-left: 12px;
+}
+.ourNav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 4px;
+  background-color: #FEFEFE;
+  transform-origin: bottom right;
+  transition: transform 0.5s ease;
+  transform: scaleX(0);
+}
+.ourNav ul a:hover::after {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}
+
+.left{    
+ float: left;  
+ } 
+
+
+
+
+.fitWid{
+  width: 100%;
+}
+
+
+    </style>
+</head>
+
+<body class="outer">
+
+    <div class="fitWid"  >
+        <div class = "titleBar" style="background: linear-gradient(135deg, #e78019,#0e6406); ">
+          <!-- <div class = "img1"><img src="./image/cgpolice.png" align="left" width="80px" height="100px" ></div> -->
+          <div class = "img2"><img src="../static/images/NewLogo.png" width="375px" height="120px"></div>
+          <!-- <div class = "img3"><img src="../static/images/Logo.png"  align="right" width="80px" height="80px"></div> -->
+      </div>
+      
+      <!-- <div class="ourNav">
+        
+          <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">opposite 1</a></li>
+              <li><a href="#">opposite 2</a></li>
+              <li><a href="#">opposite 3</a></li>
+          </ul>
+      
+      </div> -->
+
+
+    <div class="container" >
+        <!-- <p align="right"><img src="cgpolice.png" alt="" /></p> -->
+    
+
+
+        <!-- <img class="logo" src="https://www.iiitnr.ac.in/sites/all/themes/iiit/head.png" width="120"> -->
+
+        <div class="container">
+            <h1 class="neonText" style="font-size:50px ;">
+                CRIME DATA ANALYSIS
+            </h1>
+        </div>
+
+        <!-- <div class="container">
+            <h2 class="neonText">
+                Meet Our Team
+            </h2>
+        </div> -->
+
+
+
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-3">
+                <div class="col">
+                    <div class="box">
+
+                        <div class="content">
+                            <!-- <img class="img-response rounded-circle"
+                                src="https://media-exp1.licdn.com/dms/image/C4E03AQG-KbAHLVoROw/profile-displayphoto-shrink_400_400/0/1645087563976?e=1659571200&v=beta&t=sJxXBCc2FzBSB7MgVpT0gL3AsJJBBcuoIp9wXoHGLG8"
+                                width="120"> -->
+                            <center>
+                                <h1>Register Crime</h1>
+                            </center>
+                                
+                            <!-- <p>CSE | 201000004</p> -->
+                            <br>
+                            <a href="enterCrime.html"><button type="button"
+                                    class="glow-on-hover"> CLICK HERE
+                                    </button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="box">
+
+                        <div class="content">
+                            <!-- <img class="img-response rounded-circle"
+                                src="https://media-exp1.licdn.com/dms/image/C4E03AQG-af6KZGvwBA/profile-displayphoto-shrink_400_400/0/1641415729955?e=1659571200&v=beta&t=jy3Nqn6-9ui3cpXpaMYM8mJyen5ail2CkYWGBoWSI7Q"
+                                width="120"> -->
+                            <center>
+                                <h1>Analyze Crime</h1>
+                            </center>
+                                
+                            <!-- <p>CSE | 201000018</p> -->
+                            <a href="crimeAnalysis.html"><button type="button"
+                                    class="glow-on-hover"> CLICK HERE
+                                    </button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="box">
+
+                        <div class="content">
+                            <!-- <img class="img-response rounded-circle"
+                                src="https://media-exp1.licdn.com/dms/image/C5603AQH5ufEbuh_73w/profile-displayphoto-shrink_400_400/0/1637495034196?e=1659571200&v=beta&t=3OgqfS1DnAXgH-Yx133NtUh5iLAKmThNxy71AzqVI4s"
+                                width="120"> -->
+                                <center>
+                                    <h1>Predict Crime</h1>
+                                </center>
+                            
+                            <!-- <p>CSE | 201000053</p> -->
+
+                            <a href="predictCrime.html"><button type="button"
+                                    class="glow-on-hover"> CLICK HERE
+                                    </button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="box">
+
+                        <div class="content">
+                            <!-- <img class="img-response rounded-circle"
+                                src="https://media-exp1.licdn.com/dms/image/C5603AQH5ufEbuh_73w/profile-displayphoto-shrink_400_400/0/1637495034196?e=1659571200&v=beta&t=3OgqfS1DnAXgH-Yx133NtUh5iLAKmThNxy71AzqVI4s"
+                                width="120"> -->
+                                <center>
+                                    <h1>About Us </h1>
+                                </center>
+                            
+                            <!-- <p>CSE | 201000053</p> -->
+
+                            <a href="about.html"><button type="button"
+                                    class="glow-on-hover"> CLICK HERE
+                                    </button></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+</body>
+
+</html>
